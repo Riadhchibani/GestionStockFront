@@ -1,0 +1,19 @@
+<h1>Login</h1>
+<div class="content">
+    <form class="example-form">
+        <mat-icon class="icon">email</mat-icon>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Username/Email</mat-label>
+            <input name="username" #boxUsername type="text" matInput placeholder="" required>
+        </mat-form-field>
+        <div></div>
+        <mat-icon class="icon">key</mat-icon>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input name="password" #boxPassword type="password" matInput placeholder="" required>
+        </mat-form-field>
+    </form>
+</div>
+<div class="action">
+    <button mat-button (click)="login(boxUsername.value, boxPassword.value)">Login</button>
+</div>
