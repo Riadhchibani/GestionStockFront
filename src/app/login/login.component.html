@@ -1,19 +1,26 @@
-<h1>Login</h1>
-<div class="content">
-    <form class="example-form">
-        <mat-icon class="icon">email</mat-icon>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Username/Email</mat-label>
-            <input name="username" #boxUsername type="text" matInput placeholder="" required>
-        </mat-form-field>
-        <div></div>
-        <mat-icon class="icon">key</mat-icon>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Password</mat-label>
-            <input name="password" #boxPassword type="password" matInput placeholder="" required>
-        </mat-form-field>
-    </form>
-</div>
-<div class="action">
-    <button mat-button (click)="login(boxUsername.value, boxPassword.value)">Login</button>
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <form>
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example1">Login</label>
+                    <input type="email" id="form2Example1" class="form-control" />
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example2">Password</label>
+                    <input type="password" id="form2Example2" class="form-control" />
+                </div>
+                <!-- Submit button -->
+                <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                    <p>Not a member? <a href="#!">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
