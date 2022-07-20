@@ -1,0 +1,50 @@
+<div class="container">
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Code</label>
+                <input type="number" #code class="form-control" id="inputEmail4" placeholder="Code">
+                <label for="inputEmail4">reference</label>
+                <input type="text" #reference class="form-control" id="inputEmail4" placeholder="reference">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Nom de produit</label>
+                <input type="text" #nomdeproduit class="form-control" id="inputPassword4" placeholder="Nom de produit">
+                <label for="inputPassword4">short Label</label>
+                <input type="text" #shortLabel class="form-control" id="inputPassword4" placeholder="shortLabel">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Username">Date d'expiration</label>
+                <input type="date" #expirationDate class="form-control" id="inputAddress">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="birthDate">date de creation</label>
+                <input type="date" #creationDate class="form-control" id="inputAddress2" placeholder="birthDate">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Username">unitPrice </label>
+                <input type="number" #unitPrice class="form-control" id="inputAddress">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="birthDate">quantity</label>
+                <input type="number" #quantity class="form-control" id="inputAddress2">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Username">category</label>
+                <input type="text" #category class="form-control" id="inputAddress" placeholder="description">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="birthDate">description</label>
+                <input type="text" #description class="form-control" id="inputAddress2" placeholder="description">
+            </div>
+        </div>
+        <input type="button" class="btn btn-primary" value="Ajouter produit"
+            (click)="addProduct(code.value,	reference.value, nomdeproduit.value, shortLabel.value, expirationDate.value, creationDate.value, unitPrice.value, quantity.value, category.value, description.value)">
+    </form>
+</div>

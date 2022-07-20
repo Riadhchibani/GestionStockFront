@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 import { Product } from '../Product';
 
 @Component({
@@ -16,13 +17,16 @@ export class ManageProductComponent implements OnInit {
     { 'idProduct': 1, 'code': 2, 'reference': 'ref', 'productName': "productName", 'shortLabel': "shortLabel", 'expirationDate': "20/02/1999", 'productionDate': "20/02/1999", 'unitPrice': 225, 'quantity': 255, 'totalPrice': 552, 'category': 'category', 'description': 'sdqsd' }
   ]
   dataPurchase: any = [];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.dataPurchase = this.productEx;
   }
+  goToAppProduct() {
+    this.router.navigate(['manageProduct/addProduct']);  // define your component where you want to go
+  }
 
-  test(){
+  test() {
     console.log("test")
   }
 

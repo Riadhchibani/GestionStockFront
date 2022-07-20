@@ -8,5 +8,8 @@ div.container {
 
 .logoutbtn {
     position: relative;
-    left: 1200px;
+    left: 1111px;
+}
+mat-toolbar{
+    background-color: rgba(45, 45, 255, 0.233);
 }

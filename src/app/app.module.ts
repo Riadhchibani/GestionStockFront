@@ -15,12 +15,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ManageProductComponent } from './manage-product/manage-product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ManageProductComponent
+    ManageProductComponent,
+    SignUpComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
@@ -37,10 +41,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule.forRoot([
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
-      {
-        path: 'manageProduct/:username', component: ManageProductComponent, children: [
-        ]
-      }
+      { path: 'register', component: SignUpComponent },
+      { path: 'manageProduct/addProduct', component: AddProductComponent },
+      { path: 'manageProduct/:username', component: ManageProductComponent }
     ])
   ],
   providers: [],

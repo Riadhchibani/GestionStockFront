@@ -1,0 +1,30 @@
+<div class="container">
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Nom</label>
+                <input type="text" #nom class="form-control" id="inputEmail4" placeholder="Nom">
+                <label for="inputEmail4">Prenom</label>
+                <input type="text" #prenom class="form-control" id="inputEmail4" placeholder="Prenom">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Email</label>
+                <input type="email" #email class="form-control" id="inputPassword4" placeholder="Email">
+                <label for="inputPassword4">Password</label>
+                <input type="password" #password class="form-control" id="inputPassword4" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Username">Username</label>
+                <input type="text" #username class="form-control" id="inputAddress" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label for="birthDate">birthDate</label>
+                <input type="date" #birthDate class="form-control" id="inputAddress2" placeholder="birthDate">
+            </div>
+        </div>
+        <input type="button" class="btn btn-primary" value="Valide"
+            (click)="signup(nom.value,prenom.value,email.value,password.value,username.value,birthDate.value)">
+    </form>
+</div>
