@@ -1,3 +1,5 @@
+import { Bill } from "./Bill";
+
 export interface User {
 
     idUser: number,
@@ -7,4 +9,6 @@ export interface User {
     email: string,
     password: string,
     phoneNumber: number,
+    birthDate:string,
+    bill:Bill[]
 }

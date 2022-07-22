@@ -1,8 +1,17 @@
 <mat-toolbar>
     <mat-icon>menu</mat-icon>
-    <span>test</span>
+    <span>Username</span>
     <span class="example-spacer"></span>
     <div class="logoutbtn">
+        <button mat-button [matMenuTriggerFor]="menuu">
+            <mat-icon matBadge="{{prodExper}}" matBadgeColor="warn">notifications</mat-icon>
+        </button>
+        <mat-menu #menuu="matMenu">
+            <button mat-menu-item (click)="goToAppProduct()">
+                <mat-icon>notifications</mat-icon>
+                nom de produit
+            </button>
+        </mat-menu>
         <button mat-button [matMenuTriggerFor]="menu">Menu</button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="goToAppProduct()">
@@ -17,76 +26,79 @@
 
     </div>
 </mat-toolbar>
-<!--
 
--->
 <div class="container">
     <table mat-table [dataSource]="dataPurchase">
 
         <ng-container matColumnDef="code">
             <th mat-header-cell *matHeaderCellDef> code</th>
-            <td mat-cell *matCellDef="let element"> cc </td>
+            <td mat-cell *matCellDef="let element"> {{element.code}} </td>
         </ng-container>
 
         <ng-container matColumnDef="reference">
             <th mat-header-cell *matHeaderCellDef> reference </th>
-            <td mat-cell *matCellDef="let element"> cc </td>
+            <td mat-cell *matCellDef="let element"> {{element.reference}} </td>
         </ng-container>
 
         <ng-container matColumnDef="productName">
             <th mat-header-cell *matHeaderCellDef> Nom de produit </th>
-            <td mat-cell *matCellDef="let element"> cc </td>
+            <td mat-cell *matCellDef="let element"> {{element.productName}} </td>
         </ng-container>
 
         <ng-container matColumnDef="shortLabel">
             <th mat-header-cell *matHeaderCellDef> shortLabel </th>
-            <td mat-cell *matCellDef="let element"> cc </td>
+            <td mat-cell *matCellDef="let element"> {{element.shortLabel}} </td>
         </ng-container>
 
 
         <ng-container matColumnDef="expirationDate">
             <th mat-header-cell *matHeaderCellDef> expiration Date </th>
-            <td mat-cell *matCellDef="let element"> cc</td>
-            <!--{{element.expirationDate | date: 'dd/MM/yyyy hh:mm:ss'}} -->
+            <td mat-cell *matCellDef="let element"> {{element.expirationDate | date: 'dd/MM/yyyy hh:mm:ss'}}</td>
         </ng-container>
 
         <ng-container matColumnDef="productionDate">
             <th mat-header-cell *matHeaderCellDef> Date de creation </th>
-            <td mat-cell *matCellDef="let element"> cc </td>
+            <td mat-cell *matCellDef="let element"> {{element.productionDate}} </td>
         </ng-container>
 
         <ng-container matColumnDef="unitPrice">
             <th mat-header-cell *matHeaderCellDef> unitPrice </th>
-            <td mat-cell *matCellDef="let element">cc </td>
+            <td mat-cell *matCellDef="let element">{{element.unitPrice}} </td>
         </ng-container>
 
         <ng-container matColumnDef="quantity">
             <th mat-header-cell *matHeaderCellDef> quantity </th>
-            <td mat-cell *matCellDef="let element"> cc</td>
+            <td mat-cell *matCellDef="let element"> {{element.quantity}}</td>
         </ng-container>
 
         <ng-container matColumnDef="totalPrice">
             <th mat-header-cell *matHeaderCellDef> totalPrice </th>
-            <td mat-cell *matCellDef="let element"> cc </td>
+            <td mat-cell *matCellDef="let element"> {{element.totalPrice}} </td>
         </ng-container>
 
         <ng-container matColumnDef="category">
             <th mat-header-cell *matHeaderCellDef> category </th>
-            <td mat-cell *matCellDef="let element"> cc </td>
+            <td mat-cell *matCellDef="let element"> {{element.category}} </td>
         </ng-container>
 
         <ng-container matColumnDef="description">
             <th mat-header-cell *matHeaderCellDef> description </th>
-            <td mat-cell *matCellDef="let element"> cc </td>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
         </ng-container>
         <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef class="actionStyle"> Action </th>
             <td mat-cell *matCellDef="let element">
                 <div class="example-button-container">
-                    <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                    <button (click)="addBill(element)" title="Ajouter Facture" mat-icon-button
+                        aria-label="Example icon button with a vertical three dot icon">
+                        <mat-icon>add_box</mat-icon>
+                    </button>
+                    <button (click)="editProduct(element)" mat-icon-button
+                        aria-label="Example icon button with a vertical three dot icon">
                         <mat-icon>edit</mat-icon>
                     </button>
-                    <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                    <button (click)="deleteProduct(element)" mat-icon-button
+                        aria-label="Example icon button with a vertical three dot icon">
                         <mat-icon>delete</mat-icon>
                     </button>
                 </div>

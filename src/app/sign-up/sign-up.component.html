@@ -19,9 +19,19 @@
                 <label for="Username">Username</label>
                 <input type="text" #username class="form-control" id="inputAddress" placeholder="Username">
             </div>
-            <div class="form-group">
-                <label for="birthDate">birthDate</label>
+            <div class="form-group col-md-3">
+                <label for="birthDate">Date de naissance</label>
                 <input type="date" #birthDate class="form-control" id="inputAddress2" placeholder="birthDate">
+            </div>
+            <div class="form-group col-md-3">
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Role</mat-label>
+                    <mat-select>
+                        <mat-option value="Admin">Admin</mat-option>
+                        <mat-option value="User">User</mat-option>
+                    </mat-select>
+                </mat-form-field>
             </div>
         </div>
         <input type="button" class="btn btn-primary" value="Valide"
